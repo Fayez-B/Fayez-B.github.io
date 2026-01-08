@@ -242,13 +242,20 @@ body {
     width: calc(100% - 32px);
 }
 
-/* Mobile nav toggle */
+/* Mobile nav toggle - FIX: hamburger alignment */
 .nav-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
+    /* FIX: Center hamburger icon within button */
+    width: 44px;
+    height: 44px;
+    display: none; /* Hidden on desktop, shown via media query */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .hamburger {
@@ -356,11 +363,15 @@ body {
     line-height: 1.7;
 }
 
+/* FIX: Hero buttons centering */
 .hero-buttons {
     display: flex;
     gap: 16px;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Buttons */
@@ -402,10 +413,10 @@ body {
     border-color: var(--border-accent);
 }
 
-/* Scroll indicator */
+/* Scroll indicator - FIX: positioning to avoid overlap with buttons */
 .scroll-indicator {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -413,6 +424,7 @@ body {
     align-items: center;
     gap: 8px;
     animation: bounce 2s ease-in-out infinite;
+    z-index: 1; /* Below buttons */
 }
 
 .scroll-indicator span {
@@ -1317,10 +1329,22 @@ body {
         --section-padding: 60px 0;
     }
 
-    /* Show hamburger toggle */
+    /* FIX: Header layout - logo left, hamburger right, vertically centered */
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* FIX: Show hamburger toggle with proper centering */
     .nav-toggle {
-        display: block;
+        display: flex; /* Show on mobile */
+        align-items: center;
+        justify-content: center;
         z-index: 1001;
+        width: 44px;
+        height: 44px;
+        padding: 0;
     }
 
     /* Mobile slide-out menu */
@@ -1363,14 +1387,19 @@ body {
         display: none;
     }
 
-    /* Hero section - readable text, stacked buttons */
+    /* FIX: Hero section - more bottom padding for scroll indicator */
     .hero {
-        padding: 100px 20px 60px;
-        min-height: auto;
+        padding: 100px 20px 120px; /* Increased bottom padding */
+        min-height: 100vh;
+        min-height: 100dvh;
+        position: relative;
     }
 
     .hero-content {
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-tagline {
@@ -1378,10 +1407,14 @@ body {
         padding: 0 10px;
     }
 
+    /* FIX: Hero buttons - centered horizontally, stacked vertically */
     .hero-buttons {
         flex-direction: column;
-        width: 100%;
-        max-width: 280px;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 320px);
+        margin: 0 auto;
+        gap: 12px;
     }
 
     .btn {
@@ -1391,8 +1424,13 @@ body {
         font-size: 1rem;
     }
 
+    /* FIX: Scroll indicator - positioned below buttons with safe spacing */
     .scroll-indicator {
-        bottom: 20px;
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
     }
 
     /* Section spacing */
@@ -1610,9 +1648,14 @@ body {
     }
 }
 
-/* Small mobile - fine-tuning for narrow screens */
+/* Small mobile - fine-tuning for narrow screens (390px iPhone) */
 @media (max-width: 400px) {
     .container {
+        padding: 0 16px;
+    }
+
+    /* FIX: Ensure nav container alignment on small screens */
+    .nav-container {
         padding: 0 16px;
     }
 
@@ -1627,6 +1670,12 @@ body {
 
     .hero-title {
         font-size: 1.1rem;
+    }
+
+    /* FIX: Hero buttons on small screens */
+    .hero-buttons {
+        width: calc(100% - 32px); /* Account for container padding */
+        max-width: 300px;
     }
 
     .skill-chips {
