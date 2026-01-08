@@ -1277,6 +1277,7 @@ body {
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
+/* Mobile-first enhancements for clean, intentional mobile experience */
 
 /* Tablet and below */
 @media (max-width: 900px) {
@@ -1302,51 +1303,79 @@ body {
         grid-template-columns: 1fr;
     }
 
+    /* Project cards stack vertically - one per row */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
-/* Mobile */
+/* Mobile - Hamburger menu and layout adjustments */
 @media (max-width: 768px) {
     :root {
         --nav-height: 60px;
+        --section-padding: 60px 0;
     }
 
+    /* Show hamburger toggle */
     .nav-toggle {
         display: block;
         z-index: 1001;
     }
 
+    /* Mobile slide-out menu */
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 280px;
         height: 100vh;
+        height: 100dvh; /* Dynamic viewport height for mobile browsers */
         background: var(--bg-secondary);
         flex-direction: column;
         padding: 100px 32px 32px;
         gap: 8px;
         transition: right var(--transition-normal);
         border-left: 1px solid var(--border-color);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
         right: 0;
     }
 
+    /* Larger tap targets for mobile nav links */
     .nav-link {
         padding: 16px;
         font-size: 1rem;
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+        transition: background var(--transition-fast);
+    }
+
+    .nav-link:hover,
+    .nav-link:active {
+        background: rgba(0, 212, 255, 0.1);
     }
 
     .nav-link::after {
         display: none;
     }
 
+    /* Hero section - readable text, stacked buttons */
     .hero {
         padding: 100px 20px 60px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        padding: 0 10px;
     }
 
     .hero-buttons {
@@ -1358,58 +1387,143 @@ body {
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 16px 24px; /* Larger tap target */
+        font-size: 1rem;
     }
 
     .scroll-indicator {
         bottom: 20px;
     }
 
+    /* Section spacing */
     .section-title {
         margin-bottom: 40px;
+        font-size: 1.6rem;
     }
 
+    /* About section */
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .currently-exploring {
+        padding: 20px;
+    }
+
+    .exploring-list li {
+        font-size: 0.9rem;
+    }
+
+    /* Skills grid - single column */
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
+    .skill-category {
+        padding: 20px;
+    }
+
+    /* Project filters - wrap nicely */
     .project-filters {
         gap: 8px;
+        padding: 0 10px;
     }
 
     .filter-btn {
-        padding: 8px 16px;
+        padding: 10px 18px;
         font-size: 0.85rem;
+        min-height: 44px; /* Minimum tap target size */
     }
 
+    /* Project cards */
     .project-card-inner {
         padding: 20px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
     }
 
     .project-links {
         flex-direction: column;
     }
 
+    /* View Details button - easy to tap */
     .project-btn {
         justify-content: center;
+        padding: 14px 20px;
+        min-height: 48px; /* Comfortable tap target */
+        font-size: 0.9rem;
+    }
+
+    .view-details-btn {
+        width: 100%;
+    }
+
+    /* Modal - slides up from bottom on mobile */
+    .modal-overlay {
+        padding: 0;
+        align-items: flex-end;
     }
 
     .modal-content {
         border-radius: 20px 20px 0 0;
-        max-height: 90vh;
-        position: fixed;
+        max-height: 85vh;
+        max-height: 85dvh;
+        position: relative;
         bottom: 0;
         left: 0;
         right: 0;
         max-width: 100%;
+        margin: 0;
     }
 
-    .modal-header,
-    .modal-body,
-    .modal-footer {
-        padding-left: 24px;
-        padding-right: 24px;
+    .modal-overlay.active .modal-content {
+        transform: scale(1) translateY(0);
     }
 
+    .modal-header {
+        padding: 24px 20px 16px;
+        flex-wrap: wrap;
+    }
+
+    .modal-icon {
+        font-size: 2rem;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .modal-body {
+        padding: 0 20px 24px;
+    }
+
+    .modal-description {
+        font-size: 0.95rem;
+    }
+
+    .modal-features li {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+
+    .modal-close {
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.25rem;
+    }
+
+    /* Timeline / Experience */
     .timeline {
         padding-left: 30px;
     }
@@ -1424,29 +1538,95 @@ body {
         height: 14px;
     }
 
+    .timeline-content {
+        padding: 20px;
+    }
+
     .timeline-header {
         flex-direction: column;
         gap: 8px;
     }
 
-    .contact-form {
-        padding: 24px;
+    .timeline-title {
+        font-size: 1.05rem;
     }
 
+    .timeline-bullets li {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Contact form */
+    .contact-subtitle {
+        font-size: 1rem;
+        margin-top: -30px;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        padding: 24px 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        padding: 14px 16px;
+    }
+
+    .btn-submit {
+        min-height: 50px;
+    }
+
+    /* Footer */
     .footer .container {
         flex-direction: column;
         text-align: center;
+        gap: 16px;
+    }
+
+    .footer p {
+        font-size: 0.85rem;
+    }
+
+    /* Background blobs - reduce size on mobile for performance */
+    .blob-1 {
+        width: 350px;
+        height: 350px;
+        top: -100px;
+        right: -100px;
+    }
+
+    .blob-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -80px;
+        left: -80px;
+    }
+
+    .blob-3 {
+        width: 250px;
+        height: 250px;
     }
 }
 
-/* Small mobile */
+/* Small mobile - fine-tuning for narrow screens */
 @media (max-width: 400px) {
     .container {
         padding: 0 16px;
     }
 
     .hero-greeting {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .hero-title {
+        font-size: 1.1rem;
     }
 
     .skill-chips {
@@ -1456,6 +1636,54 @@ body {
     .skill-chip {
         padding: 8px 14px;
         font-size: 0.85rem;
+    }
+
+    .project-tech {
+        gap: 6px;
+    }
+
+    .tech-chip {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+
+    .filter-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .nav-menu {
+        width: 100%; /* Full-width menu on very small screens */
+        border-left: none;
+    }
+
+    .modal-header {
+        gap: 12px;
+    }
+
+    .modal-title {
+        font-size: 1.15rem;
+    }
+
+    .timeline-bullets li {
+        padding-left: 16px;
+    }
+}
+
+/* Landscape mobile - prevent awkward layouts */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 80px 20px 40px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .modal-content {
+        max-height: 90vh;
+        max-height: 90dvh;
     }
 }
 

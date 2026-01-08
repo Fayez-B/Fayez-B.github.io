@@ -206,44 +206,38 @@ function initProjectModal() {
     const modalClose = document.getElementById('modalClose');
     const projectCards = document.querySelectorAll('.project-card');
 
-    // Project data for modal content
+    // Project data for modal content (challenges & learning points)
     const projectData = {
         'dental-clinic': {
             icon: '🏥',
             title: 'Dental Clinic Management System',
-            description: 'A comprehensive clinic management application built as a course project. It handles patient registration, appointment scheduling, and basic administrative tasks.',
-            features: [
-                'Patient CRUD operations with form validation',
-                'Appointment scheduling with conflict detection',
-                'Basic admin dashboard with statistics',
-                'Data persistence using SQL database',
-                'Clean separation of UI and business logic'
+            description: 'A student-level clinic management application handling patient registration, appointment scheduling, and basic admin workflows.',
+            challenges: [
+                'Learned to design relational database schemas and manage foreign key relationships',
+                'Struggled with appointment conflict detection logic, solved it with SQL time-range queries',
+                'Gained experience separating UI code from business logic for cleaner architecture'
             ],
             tech: ['Java', 'SQL', 'JDBC', 'Swing UI']
         },
         'data-analysis': {
             icon: '📈',
             title: 'Customer Experience Data Analysis',
-            description: 'A Jupyter notebook project focused on cleaning and analyzing customer survey data to extract meaningful insights about user satisfaction.',
-            features: [
-                'Handled missing values and outliers',
-                'Created pivot tables for segmentation',
-                'Visualized trends with seaborn/matplotlib',
-                'Documented analysis steps with markdown',
-                'Exported clean dataset for further use'
+            description: 'Cleaned and analyzed customer survey data using Pandas and Jupyter to extract insights about user satisfaction trends.',
+            challenges: [
+                'Dealt with messy real-world data: missing values, inconsistent formats, and outliers',
+                'Learned pivot tables and groupby operations for meaningful segmentation',
+                'Improved my ability to tell a story with data through clear visualizations'
             ],
             tech: ['Python', 'Pandas', 'Jupyter', 'Matplotlib', 'Seaborn']
         },
         'data-pipeline': {
             icon: '🔄',
             title: 'Data Ingestion & Reporting Pipeline',
-            description: 'Built a simple ETL-style pipeline that reads CSV files, transforms the data, and loads it into PostgreSQL for querying and reporting.',
-            features: [
-                'CSV parsing with error handling',
-                'Data transformation and normalization',
-                'Batch inserts into PostgreSQL',
-                'SQL queries for aggregated reports',
-                'Basic logging for troubleshooting'
+            description: 'Built an ETL-style pipeline that reads CSV files, transforms the data, and loads it into PostgreSQL for reporting.',
+            challenges: [
+                'Learned to handle encoding issues and malformed CSV rows gracefully',
+                'Figured out batch inserts for better database performance',
+                'Gained hands-on experience writing SQL aggregation queries for reports'
             ],
             tech: ['Python', 'SQL', 'PostgreSQL', 'psycopg2']
         },
@@ -251,48 +245,56 @@ function initProjectModal() {
             icon: '📋',
             title: 'Simulation Log Analysis Tool',
             description: 'A command-line tool that parses large simulation log files, extracts errors and warnings, and generates summary reports.',
-            features: [
-                'Regex-based log parsing',
-                'Error/warning classification',
-                'Summary statistics generation',
-                'Output to CSV and text reports',
-                'Handles large files efficiently'
+            challenges: [
+                'Learned regex patterns for parsing unstructured log formats',
+                'Optimized file reading to handle large logs without memory issues',
+                'Built a CLI interface with argparse for flexible usage'
             ],
             tech: ['Python', 'Linux', 'Regex', 'argparse']
         },
         'test-automation': {
             icon: '🔧',
             title: 'Build & Test Automation Scripts',
-            description: 'A collection of shell and Python scripts to automate repetitive testing tasks, improving consistency and saving manual effort.',
-            features: [
-                'Automated test execution with Bash',
-                'Output capture and diff comparison',
-                'Pass/fail reporting with exit codes',
-                'Integration with cron for scheduling',
-                'Configuration via environment variables'
+            description: 'Shell and Python scripts to automate repetitive testing tasks, improving consistency and reducing manual effort.',
+            challenges: [
+                'Learned to chain shell commands and handle exit codes properly',
+                'Figured out how to capture and compare output for regression testing',
+                'Gained experience with cron scheduling for automated runs'
             ],
             tech: ['Python', 'Bash', 'Linux', 'Shell Scripting']
         },
         'visualization': {
             icon: '📊',
             title: 'Performance Visualization Practice',
-            description: 'Practice project creating various visualizations from performance benchmark data to identify trends and anomalies.',
-            features: [
-                'Line charts for time-series data',
-                'Bar charts for category comparisons',
-                'Scatter plots for correlation analysis',
-                'Basic anomaly highlighting',
-                'Clean, presentation-ready figures'
+            description: 'Created various charts from benchmark data to identify trends, compare categories, and spot anomalies.',
+            challenges: [
+                'Learned matplotlib customization for clean, readable figures',
+                'Practiced choosing the right chart type for different data stories',
+                'Improved skills in making visualizations presentation-ready'
             ],
             tech: ['Python', 'Matplotlib', 'NumPy', 'Pandas']
         }
     };
 
-    // Open modal on card click (but not on button clicks)
+    // Open modal on View Details button click
+    const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+    viewDetailsButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card click from also firing
+            const projectId = btn.dataset.project;
+            const data = projectData[projectId];
+
+            if (data) {
+                openModal(data);
+            }
+        });
+    });
+
+    // Also open modal on card click (anywhere on the card)
     projectCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Don't open modal if clicking on a link/button
-            if (e.target.closest('a')) return;
+            // Don't open modal if clicking on a button (already handled above)
+            if (e.target.closest('button')) return;
 
             const projectId = card.dataset.project;
             const data = projectData[projectId];
@@ -309,24 +311,13 @@ function initProjectModal() {
         document.getElementById('modalTitle').textContent = data.title;
         document.getElementById('modalDescription').textContent = data.description;
 
-        // Populate features list
+        // Populate challenges/learning list
         const featuresList = document.getElementById('modalFeatures');
-        featuresList.innerHTML = data.features.map(f => `<li>${f}</li>`).join('');
+        featuresList.innerHTML = data.challenges.map(c => `<li>${c}</li>`).join('');
 
         // Populate tech chips
         const techContainer = document.getElementById('modalTech');
         techContainer.innerHTML = data.tech.map(t => `<span class="tech-chip">${t}</span>`).join('');
-
-        // Populate footer with GitHub button only
-        const footer = document.getElementById('modalFooter');
-        footer.innerHTML = `
-            <a href="#" class="project-btn project-btn-single" target="_blank" rel="noopener">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                </svg>
-                View on GitHub
-            </a>
-        `;
 
         // Show modal
         modal.classList.add('active');
