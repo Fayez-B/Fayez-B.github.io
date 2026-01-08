@@ -211,7 +211,7 @@ function initProjectModal() {
         'dental-clinic': {
             icon: '🏥',
             title: 'Dental Clinic Management System',
-            description: 'A student-level clinic management application handling patient registration, appointment scheduling, and basic admin workflows.',
+            description: 'A clinic management application handling patient registration, appointment scheduling, and basic admin workflows.',
             challenges: [
                 'Learned to design relational database schemas and manage foreign key relationships',
                 'Struggled with appointment conflict detection logic, solved it with SQL time-range queries',
