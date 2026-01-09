@@ -352,7 +352,7 @@ function initProjectModal() {
 }
 
 // ============================================
-// CONTACT FORM - Handle submission
+// CONTACT FORM -Handle submission
 // ============================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
