@@ -4,516 +4,402 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Fayez Bezreh - Software Engineering Student Portfolio">
-    <title>Fayez Bezreh | Software Engineering Student</title>
+    <title>Fayez Bezreh</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Inter for clean modern look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">FB<span class="accent">.</span></a>
+    <!-- Minimal fixed header -->
+    <header class="site-header" id="top">
+        <div class="header-inner">
+            <a href="#top" class="site-name">Fayez Bezreh</a>
+            <nav class="site-nav" id="siteNav">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
         </div>
-    </nav>
+    </header>
 
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <p class="hero-greeting">Hi, I'm</p>
-            <h1 class="hero-name">Fayez Bezreh</h1>
-            <h2 class="hero-title">Software Engineering Student</h2>
-            <p class="hero-tagline">I build data tools, automation scripts, and practical software projects.</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll</span>
-        </div>
-    </section>
-
-    <section class="section about" id="about">
-        <div class="container">
-            <h2 class="section-title reveal">About Me</h2>
-            <div class="about-content reveal">
-                <div class="about-text">
-                    <p>
-                        I'm a second-year Software Engineering student at Carleton, and I genuinely like building things that do something useful. Data pipelines, automation scripts, small tools that save time, that's what I find interesting. I learn best by breaking stuff, reading docs at 2am, and eventually getting it to work.
-                    </p>
-                    <p>
-                        I'm looking for a co-op where I can write real code, work on actual problems, and learn from people who've been doing this longer than me. I don't have all the answers yet, but I'm good at figuring things out and I actually enjoy the process.
-                    </p>
-                    <div class="currently-exploring">
-                        <h3>Currently exploring:</h3>
-                        <ul class="exploring-list">
-                            <li><span class="explore-icon">📊</span> Python data analysis & visualization</li>
-                            <li><span class="explore-icon">🗃️</span> SQL & database design</li>
-                            <li><span class="explore-icon">⚙️</span> Automation & scripting</li>
-                            <li><span class="explore-icon">🌐</span> Basic web development</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <span>FB</span>
-                    </div>
+    <main class="document">
+        <!-- Opening: Two-column intro -->
+        <section id="about" class="section section-intro">
+            <aside class="intro-sidebar">
+                <h1 class="intro-name">Fayez Bezreh</h1>
+                <p class="intro-title">Software Engineering Student</p>
+                <p class="intro-school">Carleton University</p>
+                <span class="status-badge">Seeking Co-op — Summer/Fall 2026</span>
+                <ul class="quick-links">
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:bezrehfayez@gmail.com">bezrehfayez@gmail.com</a>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <a href="https://github.com/Fayez-B" target="_blank" rel="noopener">github.com/Fayez-B</a>
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/fayez-bezreh-448347240" target="_blank" rel="noopener">LinkedIn</a>
+                    </li>
+                </ul>
+            </aside>
+            <div class="intro-content">
+                <p>
+                    I'm a second-year Software Engineering student at Carleton, and I genuinely like building things that do something useful. Data pipelines, automation scripts, small tools that save time—that's what I find interesting. I learn best by breaking stuff, reading docs at 2am, and eventually getting it to work.
+                </p>
+                <p>
+                    I'm looking for a co-op where I can write real code, work on actual problems, and learn from people who've been doing this longer than me. I don't have all the answers yet, but I'm good at figuring things out and I actually enjoy the process.
+                </p>
+                <div class="exploring-box">
+                    <span class="exploring-label">Currently exploring:</span>
+                    <ul class="exploring-list">
+                        <li>Python data analysis & visualization</li>
+                        <li>SQL & database design</li>
+                        <li>Automation & scripting</li>
+                        <li>Basic web development</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section skills" id="skills">
-        <div class="container">
-            <h2 class="section-title reveal">Skills</h2>
-            <div class="skills-grid reveal">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-chips">
-                        <span class="skill-chip" data-delay="0">Python</span>
-                        <span class="skill-chip" data-delay="1">SQL</span>
-                        <span class="skill-chip" data-delay="2">Java</span>
-                        <span class="skill-chip" data-delay="3">JavaScript</span>
-                        <span class="skill-chip" data-delay="4">HTML/CSS</span>
+        <!-- Skills: Grouped inline tags -->
+        <section id="skills" class="section">
+            <h2 class="section-heading">Skills</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <span class="skill-label">Languages</span>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML/CSS</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Tools</h3>
-                    <div class="skill-chips">
-                        <span class="skill-chip" data-delay="0">Git</span>
-                        <span class="skill-chip" data-delay="1">Linux</span>
-                        <span class="skill-chip" data-delay="2">Bash</span>
-                        <span class="skill-chip" data-delay="3">Jupyter</span>
-                        <span class="skill-chip" data-delay="4">PostgreSQL</span>
+                <div class="skill-group">
+                    <span class="skill-label">Tools</span>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">Jupyter</span>
+                        <span class="tag">PostgreSQL</span>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Concepts</h3>
-                    <div class="skill-chips">
-                        <span class="skill-chip" data-delay="0">Data Cleaning</span>
-                        <span class="skill-chip" data-delay="1">Automation</span>
-                        <span class="skill-chip" data-delay="2">Visualization</span>
-                        <span class="skill-chip" data-delay="3">Basic Testing</span>
-                        <span class="skill-chip" data-delay="4">Scripting</span>
+                <div class="skill-group">
+                    <span class="skill-label">Concepts</span>
+                    <div class="skill-tags">
+                        <span class="tag">Data Cleaning</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Visualization</span>
+                        <span class="tag">Basic Testing</span>
+                        <span class="tag">Scripting</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="section projects" id="projects">
-        <div class="container">
-            <h2 class="section-title reveal">Projects</h2>
-
-            <div class="project-filters reveal">
+        <!-- Projects: Expandable list -->
+        <section id="projects" class="section">
+            <h2 class="section-heading">Projects</h2>
+            <div class="project-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="data">Data</button>
                 <button class="filter-btn" data-filter="automation">Automation</button>
                 <button class="filter-btn" data-filter="web">Web</button>
             </div>
-
-            <div class="projects-grid">
-                <div class="project-card reveal" data-category="web" data-project="dental-clinic">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">🏥</div>
-                            <div class="project-tags">
-                                <span class="tag">Web</span>
-                                <span class="tag">CRUD</span>
-                            </div>
+            <ul class="project-list">
+                <li class="project-item" data-category="web">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Dental Clinic Management System</span>
+                            <span class="project-desc">Built a clinic system for scheduling, patient records, and basic admin workflows.</span>
                         </div>
-                        <h3 class="project-title">Dental Clinic Management System</h3>
-                        <p class="project-description">
-                            Built a clinic system for scheduling, patient records, and basic admin workflows.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Java</span>
-                            <span class="tech-chip">SQL</span>
-                            <span class="tech-chip">JDBC</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="dental-clinic">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
+                        <div class="project-meta">
+                            <span class="project-tech">Java, SQL, JDBC</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
                         </div>
                     </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">A student-level clinic management application handling patient registration, appointment scheduling, and basic admin workflows.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Learned to design relational database schemas and manage foreign key relationships</li>
+                                <li>Struggled with appointment conflict detection logic, solved it with SQL time-range queries</li>
+                                <li>Gained experience separating UI code from business logic for cleaner architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="data">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Customer Experience Data Analysis</span>
+                            <span class="project-desc">Cleaned messy datasets, handled missing values, and summarized trends with charts.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Pandas, Jupyter</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">Cleaned and analyzed customer survey data using Pandas and Jupyter to extract insights about user satisfaction trends.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Dealt with messy real-world data: missing values, inconsistent formats, and outliers</li>
+                                <li>Learned pivot tables and groupby operations for meaningful segmentation</li>
+                                <li>Improved my ability to tell a story with data through clear visualizations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="data">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Data Ingestion & Reporting Pipeline</span>
+                            <span class="project-desc">Loaded CSVs into PostgreSQL and wrote queries to filter/aggregate for reporting.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, SQL, PostgreSQL</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">Built an ETL-style pipeline that reads CSV files, transforms the data, and loads it into PostgreSQL for reporting.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Learned to handle encoding issues and malformed CSV rows gracefully</li>
+                                <li>Figured out batch inserts for better database performance</li>
+                                <li>Gained hands-on experience writing SQL aggregation queries for reports</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="automation">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Simulation Log Analysis Tool</span>
+                            <span class="project-desc">Parsed text-based logs to extract errors/warnings and generated summary reports.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Linux, Regex</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">A command-line tool that parses large simulation log files, extracts errors and warnings, and generates summary reports.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Learned regex patterns for parsing unstructured log formats</li>
+                                <li>Optimized file reading to handle large logs without memory issues</li>
+                                <li>Built a CLI interface with argparse for flexible usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="automation">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Build & Test Automation Scripts</span>
+                            <span class="project-desc">Automated test runs, captured outputs, flagged failures, and improved repeatability.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Bash, Linux</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">Shell and Python scripts to automate repetitive testing tasks, improving consistency and reducing manual effort.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Learned to chain shell commands and handle exit codes properly</li>
+                                <li>Figured out how to capture and compare output for regression testing</li>
+                                <li>Gained experience with cron scheduling for automated runs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="data">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Performance Visualization Practice</span>
+                            <span class="project-desc">Created line/bar/scatter charts to spot trends and basic anomalies in performance data.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Matplotlib, NumPy</span>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">Created various charts from benchmark data to identify trends, compare categories, and spot anomalies.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning:</span>
+                            <ul>
+                                <li>Learned matplotlib customization for clean, readable figures</li>
+                                <li>Practiced choosing the right chart type for different data stories</li>
+                                <li>Improved skills in making visualizations presentation-ready</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Experience: Simple list -->
+        <section id="experience" class="section">
+            <h2 class="section-heading">Experience</h2>
+            <ul class="experience-list">
+                <li class="experience-item">
+                    <div class="experience-header">
+                        <span class="experience-role">Seeking Co-op Position</span>
+                        <span class="experience-org">Open to Opportunities</span>
+                        <span class="experience-date">Summer/Fall 2026</span>
+                    </div>
+                    <p class="experience-desc">
+                        Looking for a co-op role where I can apply my skills in data analysis, automation, and software development. Eager to contribute to real projects and learn from experienced teams.
+                    </p>
+                    <div class="experience-tags">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </li>
+
+                <li class="experience-item">
+                    <div class="experience-header">
+                        <span class="experience-role">Teaching Assistant (TA)</span>
+                        <span class="experience-org">Carleton University — ECOR 1032</span>
+                        <span class="experience-date">Winter 2026</span>
+                    </div>
+                    <ul class="experience-bullets">
+                        <li>Supported students during labs and office hours with circuit analysis and problem-solving</li>
+                        <li>Helped explain foundational concepts like Ohm's law, KCL/KVL, and basic circuit measurement techniques</li>
+                        <li>Assisted with grading and administrative tasks under instructor guidance</li>
+                        <li>Communicated technical ideas in a friendly, approachable way to help students succeed</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">Teaching</span>
+                        <span class="tag">Circuits</span>
+                        <span class="tag">Communication</span>
+                    </div>
+                </li>
+
+                <li class="experience-item">
+                    <div class="experience-header">
+                        <span class="experience-role">Tutor</span>
+                        <span class="experience-org">Part-time</span>
+                        <span class="experience-date">2024 – Present</span>
+                    </div>
+                    <ul class="experience-bullets">
+                        <li>Provided one-on-one tutoring to middle school, high school, and early university students in math and science subjects</li>
+                        <li>Helped students build foundational understanding in calculus, algebra, physics, and chemistry through clear explanations and practice problems</li>
+                        <li>Adapted teaching approach based on each student's learning style and pace to improve comprehension</li>
+                        <li>Guided students through homework and test preparation, focusing on problem-solving strategies</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">Tutoring</span>
+                        <span class="tag">Math & Science</span>
+                        <span class="tag">Communication</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Contact: Compact -->
+        <section id="contact" class="section">
+            <h2 class="section-heading">Contact</h2>
+            <p class="contact-note">I'm currently looking for co-op opportunities. Feel free to reach out!</p>
+            <div class="contact-grid">
+                <div class="contact-links">
+                    <a href="mailto:bezrehfayez@gmail.com" class="contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        bezrehfayez@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/fayez-bezreh-448347240" target="_blank" rel="noopener" class="contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        linkedin.com/in/fayez-bezreh
+                    </a>
+                    <a href="https://github.com/Fayez-B" target="_blank" rel="noopener" class="contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        github.com/Fayez-B
+                    </a>
                 </div>
-
-                <div class="project-card reveal" data-category="data" data-project="data-analysis">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">📈</div>
-                            <div class="project-tags">
-                                <span class="tag">Data</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Customer Experience Data Analysis</h3>
-                        <p class="project-description">
-                            Cleaned messy datasets, handled missing values, and summarized trends with charts.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">Pandas</span>
-                            <span class="tech-chip">Jupyter</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="data-analysis">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal" data-category="data" data-project="data-pipeline">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">🔄</div>
-                            <div class="project-tags">
-                                <span class="tag">Data</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Data Ingestion & Reporting Pipeline</h3>
-                        <p class="project-description">
-                            Loaded CSVs into PostgreSQL and wrote queries to filter/aggregate for reporting.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">SQL</span>
-                            <span class="tech-chip">PostgreSQL</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="data-pipeline">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal" data-category="automation" data-project="log-analysis">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">📋</div>
-                            <div class="project-tags">
-                                <span class="tag">Automation</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Simulation Log Analysis Tool</h3>
-                        <p class="project-description">
-                            Parsed text-based logs to extract errors/warnings and generated summary reports.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">Linux</span>
-                            <span class="tech-chip">Regex</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="log-analysis">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal" data-category="automation" data-project="test-automation">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">🔧</div>
-                            <div class="project-tags">
-                                <span class="tag">Automation</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Build & Test Automation Scripts</h3>
-                        <p class="project-description">
-                            Automated test runs, captured outputs, flagged failures, and improved repeatability.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">Bash</span>
-                            <span class="tech-chip">Linux</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="test-automation">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card reveal" data-category="data" data-project="visualization">
-                    <div class="project-card-inner">
-                        <div class="project-header">
-                            <div class="project-icon">📊</div>
-                            <div class="project-tags">
-                                <span class="tag">Data</span>
-                            </div>
-                        </div>
-                        <h3 class="project-title">Performance Visualization Practice</h3>
-                        <p class="project-description">
-                            Created line/bar/scatter charts to spot trends and basic anomalies in performance data.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">Matplotlib</span>
-                            <span class="tech-chip">NumPy</span>
-                        </div>
-                        <div class="project-links">
-                            <button class="project-btn project-btn-single view-details-btn" data-project="visualization">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="12" y1="16" x2="12" y2="12"/>
-                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                                </svg>
-                                View Details
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="modal-overlay" id="projectModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-header">
-                <span class="modal-icon" id="modalIcon"></span>
-                <h3 class="modal-title" id="modalTitle"></h3>
-            </div>
-            <div class="modal-body">
-                <p class="modal-description" id="modalDescription"></p>
-                <div class="modal-details">
-                    <h4>Challenges & Learning:</h4>
-                    <ul class="modal-features" id="modalFeatures"></ul>
-                </div>
-                <div class="modal-tech" id="modalTech"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="section experience" id="experience">
-        <div class="container">
-            <h2 class="section-title reveal">Experience</h2>
-            <div class="timeline reveal">
-               
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Seeking Co-op Position</h3>
-                            <span class="timeline-date">Summer/Fall 2026</span>
-                        </div>
-                        <p class="timeline-company">Open to Opportunities</p>
-                        <p class="timeline-description">
-                            Looking for a co-op role where I can apply my skills in data analysis, automation,
-                            and software development. Eager to contribute to real projects and learn from
-                            experienced teams.
-                        </p>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">Data Analysis</span>
-                            <span class="timeline-tag">Python</span>
-                            <span class="timeline-tag">Automation</span>
-                        </div>
-                    </div>
-                </div>
-
-             
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Teaching Assistant (TA)</h3>
-                            <span class="timeline-date">Winter 2026</span>
-                        </div>
-                        <p class="timeline-company">Carleton University — ECOR 1032: Circuits and Mechatronics</p>
-                        <ul class="timeline-bullets">
-                            <li>Supported students during labs and office hours with circuit analysis and problem-solving</li>
-                            <li>Helped explain foundational concepts like Ohm's law, KCL/KVL, and basic circuit measurement techniques</li>
-                            <li>Assisted with grading and administrative tasks under instructor guidance</li>
-                            <li>Communicated technical ideas in a friendly, approachable way to help students succeed</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">Teaching</span>
-                            <span class="timeline-tag">Circuits</span>
-                            <span class="timeline-tag">Communication</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="timeline-title">Tutor</h3>
-                            <span class="timeline-date">2024 - Present</span>
-                        </div>
-                        <p class="timeline-company">Part-time</p>
-                        <ul class="timeline-bullets">
-                            <li>Provided one-on-one tutoring to middle school, high school, and early university students in math and science subjects</li>
-                            <li>Helped students build foundational understanding in calculus, algebra, physics, and chemistry through clear explanations and practice problems</li>
-                            <li>Adapted teaching approach based on each student's learning style and pace to improve comprehension</li>
-                            <li>Guided students through homework and test preparation, focusing on problem-solving strategies</li>
-                        </ul>
-                        <div class="timeline-tags">
-                            <span class="timeline-tag">Tutoring</span>
-                            <span class="timeline-tag">Math & Science</span>
-                            <span class="timeline-tag">Communication</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section contact" id="contact">
-        <div class="container">
-            <h2 class="section-title reveal">Get In Touch</h2>
-            <p class="contact-subtitle reveal">
-                I'm currently looking for co-op opportunities. Feel free to reach out!
-            </p>
-            <div class="contact-wrapper reveal">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:bezrehfayez@gmail.com">bezrehfayez@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                <rect x="2" y="9" width="4" height="12"/>
-                                <circle cx="4" cy="4" r="2"/>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/fayez-bezreh-448347240" target="_blank" rel="noopener">linkedin.com/in/Fayez-Bezreh</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/Fayez-B" target="_blank" rel="noopener">github.com/Fayez-Bezreh</a>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm"
-      action="https://formspree.io/f/xdakqwko"
-      method="POST">
-
-                    <div class="form-group">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xdakqwko" method="POST">
+                    <div class="form-row">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="Your name">
                     </div>
-                    <div class="form-group">
+                    <div class="form-row">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                     </div>
-                    <div class="form-group">
+                    <div class="form-row">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+                        <textarea id="message" name="message" rows="4" required placeholder="Your message..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <span>Send Message</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"/>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                        </svg>
-                    </button>
+                    <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-
-                <div class="form-success" id="formSuccess">
-                    <div class="success-icon">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                    </div>
-                    <h3>Message Sent!</h3>
-                    <p>Thanks for reaching out. I'll get back to you soon!</p>
-                    <button class="btn btn-secondary" id="sendAnother">Send Another</button>
+                <div class="form-success" id="formSuccess" hidden>
+                    <p>Message sent! I'll get back to you soon.</p>
+                    <button type="button" class="reset-btn" id="sendAnother">Send Another</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Fayez Bezreh. Built with HTML, CSS & JavaScript.</p>
-            <div class="footer-links">
-                <a href="https://github.com/Fayez-B" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/fayez-bezreh-448347240" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
-            </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 Fayez Bezreh. Built with HTML, CSS & JS.</p>
+        <div class="footer-links">
+            <a href="https://github.com/Fayez-B" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/fayez-bezreh-448347240" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+            </a>
         </div>
     </footer>
 
