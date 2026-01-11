@@ -12,14 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ========== ANIMATED BACKGROUND ========== -->
     <div class="bg-animation">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
-    <!-- ========== NAVBAR ========== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">FB<span class="accent">.</span></a>
@@ -36,7 +34,6 @@
         </div>
     </nav>
 
-    <!-- ========== HERO SECTION ========== -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <p class="hero-greeting">Hi, I'm</p>
@@ -48,7 +45,6 @@
                 <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
         </div>
-        <!-- Scroll indicator -->
         <div class="scroll-indicator">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -57,7 +53,6 @@
         </div>
     </section>
 
-    <!-- ========== ABOUT SECTION ========== -->
     <section class="section about" id="about">
         <div class="container">
             <h2 class="section-title reveal">About Me</h2>
@@ -88,12 +83,10 @@
         </div>
     </section>
 
-    <!-- ========== SKILLS SECTION ========== -->
     <section class="section skills" id="skills">
         <div class="container">
             <h2 class="section-title reveal">Skills</h2>
             <div class="skills-grid reveal">
-                <!-- Languages -->
                 <div class="skill-category">
                     <h3 class="skill-category-title">Languages</h3>
                     <div class="skill-chips">
@@ -104,7 +97,6 @@
                         <span class="skill-chip" data-delay="4">HTML/CSS</span>
                     </div>
                 </div>
-                <!-- Tools -->
                 <div class="skill-category">
                     <h3 class="skill-category-title">Tools</h3>
                     <div class="skill-chips">
@@ -115,7 +107,7 @@
                         <span class="skill-chip" data-delay="4">PostgreSQL</span>
                     </div>
                 </div>
-                <!-- Concepts -->
+
                 <div class="skill-category">
                     <h3 class="skill-category-title">Concepts</h3>
                     <div class="skill-chips">
@@ -130,12 +122,10 @@
         </div>
     </section>
 
-    <!-- ========== PROJECTS SECTION ========== -->
     <section class="section projects" id="projects">
         <div class="container">
             <h2 class="section-title reveal">Projects</h2>
 
-            <!-- Filter Buttons -->
             <div class="project-filters reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="data">Data</button>
@@ -143,9 +133,7 @@
                 <button class="filter-btn" data-filter="web">Web</button>
             </div>
 
-            <!-- Project Cards Grid -->
             <div class="projects-grid">
-                <!-- Project 1: Dental Clinic Management System -->
                 <div class="project-card reveal" data-category="web" data-project="dental-clinic">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -177,7 +165,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Customer Experience Data Analysis -->
                 <div class="project-card reveal" data-category="data" data-project="data-analysis">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -208,7 +195,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Data Ingestion & Reporting Pipeline -->
                 <div class="project-card reveal" data-category="data" data-project="data-pipeline">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -239,7 +225,6 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Simulation Log Analysis Tool -->
                 <div class="project-card reveal" data-category="automation" data-project="log-analysis">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -270,7 +255,6 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Build & Test Automation Scripts -->
                 <div class="project-card reveal" data-category="automation" data-project="test-automation">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -301,7 +285,6 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Performance Visualization Practice -->
                 <div class="project-card reveal" data-category="data" data-project="visualization">
                     <div class="project-card-inner">
                         <div class="project-header">
@@ -335,7 +318,6 @@
         </div>
     </section>
 
-    <!-- ========== PROJECT MODAL ========== -->
     <div class="modal-overlay" id="projectModal">
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -354,12 +336,11 @@
         </div>
     </div>
 
-    <!-- ========== EXPERIENCE SECTION ========== -->
     <section class="section experience" id="experience">
         <div class="container">
             <h2 class="section-title reveal">Experience</h2>
             <div class="timeline reveal">
-                <!-- Experience 1: Seeking Co-op -->
+               
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -381,7 +362,7 @@
                     </div>
                 </div>
 
-                <!-- Experience 2: Teaching Assistant -->
+             
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -404,7 +385,7 @@
                     </div>
                 </div>
 
-                <!-- Experience 3: Tutor -->
+
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
@@ -430,7 +411,6 @@
         </div>
     </section>
 
-    <!-- ========== CONTACT SECTION ========== -->
     <section class="section contact" id="contact">
         <div class="container">
             <h2 class="section-title reveal">Get In Touch</h2>
@@ -438,7 +418,6 @@
                 I'm currently looking for co-op opportunities. Feel free to reach out!
             </p>
             <div class="contact-wrapper reveal">
-                <!-- Contact Info -->
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -478,7 +457,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
                 <form class="contact-form" id="contactForm"
       action="https://formspree.io/f/xdakqwko"
       method="POST">
@@ -504,7 +482,6 @@
                     </button>
                 </form>
 
-                <!-- Success Message -->
                 <div class="form-success" id="formSuccess">
                     <div class="success-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -520,7 +497,6 @@
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Fayez Bezreh. Built with HTML, CSS & JavaScript.</p>

@@ -1,9 +1,4 @@
-/* ============================================
-   FAYEZ BEZREH - PORTFOLIO WEBSITE STYLES
-   Modern dark theme with glass/neon aesthetic
-   ============================================ */
 
-/* ========== CSS VARIABLES ========== */
 :root {
     /* Colors */
     --bg-primary: #0a0a0f;
@@ -1654,7 +1649,6 @@ body {
         padding: 0 16px;
     }
 
-    /* FIX: Ensure nav container alignment on small screens */
     .nav-container {
         padding: 0 16px;
     }
@@ -1672,9 +1666,9 @@ body {
         font-size: 1.1rem;
     }
 
-    /* FIX: Hero buttons on small screens */
+
     .hero-buttons {
-        width: calc(100% - 32px); /* Account for container padding */
+        width: calc(100% - 32px); 
         max-width: 300px;
     }
 
@@ -1702,7 +1696,7 @@ body {
     }
 
     .nav-menu {
-        width: 100%; /* Full-width menu on very small screens */
+        width: 100%; 
         border-left: none;
     }
 
@@ -1719,7 +1713,7 @@ body {
     }
 }
 
-/* Landscape mobile - prevent awkward layouts */
+
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         min-height: auto;
@@ -1736,7 +1730,7 @@ body {
     }
 }
 
-/* ========== UTILITY CLASSES ========== */
+
 .sr-only {
     position: absolute;
     width: 1px;

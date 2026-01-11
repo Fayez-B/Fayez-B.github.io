@@ -1,26 +1,10 @@
-/**
- * FAYEZ BEZREH - PORTFOLIO WEBSITE
- * JavaScript for animations, interactions, and functionality
- *
- * Features:
- * - Smooth scroll navigation
- * - Navbar scroll effects
- * - Mobile menu toggle
- * - Scroll reveal animations (IntersectionObserver)
- * - Project filtering
- * - Project modal
- * - Contact form handling
- * - Respects prefers-reduced-motion
- */
 
-// ============================================
-// UTILITY: Check for reduced motion preference
-// ============================================
+//FAYEZ BEZREH - PORTFOLIO WEBSITE
+
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ============================================
-// DOM CONTENT LOADED - Initialize everything
-// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initMobileMenu();
@@ -31,15 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
 });
 
-// ============================================
-// NAVBAR - Scroll effects and active states
-// ============================================
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
-    // Add scrolled class when page is scrolled
     function handleScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -47,11 +27,9 @@ function initNavbar() {
             navbar.classList.remove('scrolled');
         }
 
-        // Update active nav link based on scroll position
         updateActiveNavLink();
     }
 
-    // Determine which section is currently in view
     function updateActiveNavLink() {
         const scrollPosition = window.scrollY + 100;
 
@@ -71,7 +49,6 @@ function initNavbar() {
         });
     }
 
-    // Throttle scroll handler for performance
     let ticking = false;
     window.addEventListener('scroll', () => {
         if (!ticking) {
@@ -83,26 +60,21 @@ function initNavbar() {
         }
     });
 
-    // Initial check
     handleScroll();
 }
 
-// ============================================
-// MOBILE MENU - Toggle functionality
-// ============================================
+
 function initMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Toggle menu on hamburger click
     navToggle.addEventListener('click', () => {
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close menu when a link is clicked
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navToggle.classList.remove('active');
@@ -111,7 +83,6 @@ function initMobileMenu() {
         });
     });
 
-    // Close menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             navToggle.classList.remove('active');
@@ -121,11 +92,8 @@ function initMobileMenu() {
     });
 }
 
-// ============================================
-// SCROLL REVEAL - Animate elements on scroll
-// ============================================
+
 function initScrollReveal() {
-    // Skip if user prefers reduced motion
     if (prefersReducedMotion) {
         document.querySelectorAll('.reveal').forEach(el => {
             el.classList.add('active');
@@ -151,43 +119,37 @@ function initScrollReveal() {
                     entry.target.classList.add('active');
                 }
 
-                // Optionally unobserve after animation (one-time)
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
     revealElements.forEach(el => observer.observe(el));
 
-    // Also observe skill categories
     document.querySelectorAll('.skill-category').forEach(el => observer.observe(el));
 }
 
-// ============================================
-// PROJECT FILTERS - Filter cards by category
-// ============================================
+
 function initProjectFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active button
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
 
-            // Filter cards with animation
+           
             projectCards.forEach(card => {
                 const category = card.dataset.category;
 
                 if (filter === 'all' || category === filter) {
                     card.classList.remove('hidden');
-                    // Trigger re-animation if not reduced motion
+                    
                     if (!prefersReducedMotion) {
                         card.style.animation = 'none';
-                        card.offsetHeight; // Trigger reflow
+                        card.offsetHeight; 
                         card.style.animation = '';
                     }
                 } else {
@@ -198,15 +160,12 @@ function initProjectFilters() {
     });
 }
 
-// ============================================
-// PROJECT MODAL - Show project details
-// ============================================
+
 function initProjectModal() {
     const modal = document.getElementById('projectModal');
     const modalClose = document.getElementById('modalClose');
     const projectCards = document.querySelectorAll('.project-card');
 
-    // Project data for modal content (challenges & learning points)
     const projectData = {
         'dental-clinic': {
             icon: '🏥',
@@ -276,11 +235,11 @@ function initProjectModal() {
         }
     };
 
-    // Open modal on View Details button click
+
     const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
     viewDetailsButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent card click from also firing
+            e.stopPropagation(); 
             const projectId = btn.dataset.project;
             const data = projectData[projectId];
 
@@ -290,10 +249,8 @@ function initProjectModal() {
         });
     });
 
-    // Also open modal on card click (anywhere on the card)
     projectCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Don't open modal if clicking on a button (already handled above)
             if (e.target.closest('button')) return;
 
             const projectId = card.dataset.project;
@@ -305,45 +262,44 @@ function initProjectModal() {
         });
     });
 
-    // Open modal with data
+
     function openModal(data) {
         document.getElementById('modalIcon').textContent = data.icon;
         document.getElementById('modalTitle').textContent = data.title;
         document.getElementById('modalDescription').textContent = data.description;
 
-        // Populate challenges/learning list
         const featuresList = document.getElementById('modalFeatures');
         featuresList.innerHTML = data.challenges.map(c => `<li>${c}</li>`).join('');
 
-        // Populate tech chips
+
         const techContainer = document.getElementById('modalTech');
         techContainer.innerHTML = data.tech.map(t => `<span class="tech-chip">${t}</span>`).join('');
 
-        // Show modal
+
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Focus trap for accessibility
+
         modalClose.focus();
     }
 
-    // Close modal
+
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    // Close button click
+
     modalClose.addEventListener('click', closeModal);
 
-    // Click outside to close
+
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // Escape key to close
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeModal();
@@ -351,9 +307,7 @@ function initProjectModal() {
     });
 }
 
-// ============================================
-// CONTACT FORM-Handle submission
-// ============================================
+
 function initContactForm() {
     const form = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
@@ -392,12 +346,9 @@ function initContactForm() {
 
 
 
-// ============================================
-// SMOOTH SCROLL - Enhanced smooth scrolling
-// ============================================
+
 function initSmoothScroll() {
-    // Skip enhanced smooth scroll if user prefers reduced motion
-    // (CSS handles basic smooth scroll, but we can enhance it)
+
     if (prefersReducedMotion) return;
 
     const links = document.querySelectorAll('a[href^="#"]');
@@ -406,7 +357,6 @@ function initSmoothScroll() {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
 
-            // Skip if it's just "#"
             if (href === '#') return;
 
             const target = document.querySelector(href);
@@ -422,7 +372,6 @@ function initSmoothScroll() {
                     behavior: 'smooth'
                 });
 
-                // Update URL without triggering scroll
                 history.pushState(null, null, href);
             }
         });
