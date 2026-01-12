@@ -1,10 +1,7 @@
-/**
- * Portfolio - Minimal JavaScript
- * Handles: mobile nav, project filters, project expand/collapse, contact form
- */
+// portfolio js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ========== MOBILE NAVIGATION ==========
+    // mobile nav
     const navToggle = document.getElementById('navToggle');
     const siteNav = document.getElementById('siteNav');
 
@@ -14,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
             siteNav.classList.toggle('active');
         });
 
-        // Close nav when clicking a link
         siteNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navToggle.classList.remove('active');
@@ -22,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Close nav when clicking outside
+        // close when clicking outside
         document.addEventListener('click', (e) => {
             if (!navToggle.contains(e.target) && !siteNav.contains(e.target)) {
                 navToggle.classList.remove('active');
@@ -30,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 navToggle.classList.remove('active');
@@ -39,19 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ========== PROJECT FILTERS ==========
+    // project filters
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active state
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
 
-            // Show/hide projects
             projectItems.forEach(item => {
                 if (filter === 'all' || item.dataset.category === filter) {
                     item.classList.remove('hidden');
@@ -62,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ========== PROJECT EXPAND/COLLAPSE ==========
+    // project expand/collapse
     const projectToggles = document.querySelectorAll('.project-toggle');
 
     projectToggles.forEach(toggle => {
@@ -79,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ========== CONTACT FORM ==========
+    // contact form
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
     const sendAnother = document.getElementById('sendAnother');
@@ -92,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
 
-            // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
@@ -100,18 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
-                    // Show success message
                     contactForm.hidden = true;
                     formSuccess.hidden = false;
                     contactForm.reset();
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error('failed');
                 }
             } catch (error) {
                 alert('Sorry, there was an error sending your message. Please try again or email me directly.');
@@ -121,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Reset form
         if (sendAnother) {
             sendAnother.addEventListener('click', () => {
                 formSuccess.hidden = true;

@@ -135,22 +135,73 @@
                 <li class="project-item" data-category="web">
                     <div class="project-row">
                         <div class="project-main">
-                            <span class="project-name">Dental Clinic Management System</span>
-                            <span class="project-desc">Built a clinic system for scheduling, patient records, and basic admin workflows.</span>
+                            <span class="project-name">Job Application Tracker</span>
+                            <span class="project-desc">Local app to track co-op applications with search, filters, and CSV export.</span>
                         </div>
                         <div class="project-meta">
-                            <span class="project-tech">Java, SQL, JDBC</span>
+                            <span class="project-tech">HTML, CSS, JS, localStorage</span>
+                            <a href="https://github.com/Fayez-B/Job-Application-Tracker" class="github-link" target="_blank" rel="noopener" aria-label="View Job Application Tracker on GitHub">GitHub</a>
                             <button class="project-toggle" aria-expanded="false">Details</button>
                         </div>
                     </div>
                     <div class="project-details" hidden>
-                        <p class="details-overview">A student-level clinic management application handling patient registration, appointment scheduling, and basic admin workflows.</p>
+                        <p class="details-overview">Built a simple tracker so I didn't have to keep everything in a messy spreadsheet. Stores data in localStorage and can export to CSV.</p>
                         <div class="details-section">
                             <span class="details-label">Challenges & Learning</span>
                             <ul>
-                                <li>Learned to design relational database schemas and manage foreign key relationships</li>
-                                <li>Struggled with appointment conflict detection logic, solved it with SQL time-range queries</li>
-                                <li>Gained experience separating UI code from business logic for cleaner architecture</li>
+                                <li>Kept UI state simple - filters and sort just update the view, no complex state management needed</li>
+                                <li>Figured out localStorage structure and how to parse/stringify JSON without breaking things</li>
+                                <li>Had to handle CSV edge cases like quotes and commas inside fields</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="automation">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Simulation Log Analysis Tool</span>
+                            <span class="project-desc">Parsed text-based logs to extract errors/warnings and generated summary reports.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Linux, Regex</span>
+                            <a href="https://github.com/Fayez-B/simulation-log-analyzer" class="github-link" target="_blank" rel="noopener" aria-label="View Simulation Log Analysis Tool on GitHub">GitHub</a>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">A command-line tool that parses large simulation log files, extracts errors and warnings, and generates summary reports.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning</span>
+                            <ul>
+                                <li>Learned regex patterns for parsing unstructured log formats</li>
+                                <li>Optimized file reading to handle large logs without memory issues</li>
+                                <li>Built a CLI interface with argparse for flexible usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="project-item" data-category="automation">
+                    <div class="project-row">
+                        <div class="project-main">
+                            <span class="project-name">Build & Test Automation Scripts</span>
+                            <span class="project-desc">Automated test runs, captured outputs, flagged failures, and improved repeatability.</span>
+                        </div>
+                        <div class="project-meta">
+                            <span class="project-tech">Python, Bash, Linux</span>
+                            <a href="https://github.com/Fayez-B/simple-test-runner" class="github-link" target="_blank" rel="noopener" aria-label="View Build & Test Automation Scripts on GitHub">GitHub</a>
+                            <button class="project-toggle" aria-expanded="false">Details</button>
+                        </div>
+                    </div>
+                    <div class="project-details" hidden>
+                        <p class="details-overview">Shell and Python scripts to automate repetitive testing tasks, improving consistency and reducing manual effort.</p>
+                        <div class="details-section">
+                            <span class="details-label">Challenges & Learning</span>
+                            <ul>
+                                <li>Learned to chain shell commands and handle exit codes properly</li>
+                                <li>Figured out how to capture and compare output for regression testing</li>
+                                <li>Gained experience with cron scheduling for automated runs</li>
                             </ul>
                         </div>
                     </div>
@@ -199,54 +250,6 @@
                                 <li>Learned to handle encoding issues and malformed CSV rows gracefully</li>
                                 <li>Figured out batch inserts for better database performance</li>
                                 <li>Gained hands-on experience writing SQL aggregation queries for reports</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="project-item" data-category="automation">
-                    <div class="project-row">
-                        <div class="project-main">
-                            <span class="project-name">Simulation Log Analysis Tool</span>
-                            <span class="project-desc">Parsed text-based logs to extract errors/warnings and generated summary reports.</span>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-tech">Python, Linux, Regex</span>
-                            <button class="project-toggle" aria-expanded="false">Details</button>
-                        </div>
-                    </div>
-                    <div class="project-details" hidden>
-                        <p class="details-overview">A command-line tool that parses large simulation log files, extracts errors and warnings, and generates summary reports.</p>
-                        <div class="details-section">
-                            <span class="details-label">Challenges & Learning</span>
-                            <ul>
-                                <li>Learned regex patterns for parsing unstructured log formats</li>
-                                <li>Optimized file reading to handle large logs without memory issues</li>
-                                <li>Built a CLI interface with argparse for flexible usage</li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="project-item" data-category="automation">
-                    <div class="project-row">
-                        <div class="project-main">
-                            <span class="project-name">Build & Test Automation Scripts</span>
-                            <span class="project-desc">Automated test runs, captured outputs, flagged failures, and improved repeatability.</span>
-                        </div>
-                        <div class="project-meta">
-                            <span class="project-tech">Python, Bash, Linux</span>
-                            <button class="project-toggle" aria-expanded="false">Details</button>
-                        </div>
-                    </div>
-                    <div class="project-details" hidden>
-                        <p class="details-overview">Shell and Python scripts to automate repetitive testing tasks, improving consistency and reducing manual effort.</p>
-                        <div class="details-section">
-                            <span class="details-label">Challenges & Learning</span>
-                            <ul>
-                                <li>Learned to chain shell commands and handle exit codes properly</li>
-                                <li>Figured out how to capture and compare output for regression testing</li>
-                                <li>Gained experience with cron scheduling for automated runs</li>
                             </ul>
                         </div>
                     </div>
